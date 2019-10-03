@@ -8,7 +8,7 @@
 ### 1. 默认构造函数
 > 默认构造函数是不带参数，与类名同名的函数。 即 `类名();` 
 
-```
+```cpp
 class Person {
 public:
     Person();//默认构造函数 ①
@@ -53,10 +53,10 @@ Person构造函数
 
 - 如，上述类中，我们可以这样定义一个构造函数：
 
-```
+```cpp
 Person(int age, float height, float weight);//带参构造函数
 ```
-```
+```cpp
 Person::Person(int age, float height, float weight) {
     cout << "Person带参构造函数" << endl;
     this->age = age;
@@ -68,7 +68,7 @@ Person::Person(int age, float height, float weight) {
 
 上述带参构造函数，可以如下创建一个对象：
 
-```
+```cpp
 int main() {
     Person p;//会自动调用默认的构造函数
     Person per(18, 70, 170);//调用自定义带参构造函数 ③
@@ -80,11 +80,11 @@ int main() {
 
 - 当然也可以定义其他版本的带参构造函数：
 
-```
+```cpp
 Person(int age);//带参构造函数，可以定义多个版本，只要参数列表不同。
 ```
 
-```
+```cpp
 Person::Person(int age) {
     cout << "Person 带参构造函数 2" << endl;
     if (age < 0 || age > 100) {
@@ -104,7 +104,7 @@ Person::Person(int age) {
 
 上述构造函数，可以如下调用：
 
-```
+```cpp
 int main()
 {
     Person pp1(20);
@@ -140,7 +140,7 @@ Person 带参构造函数 2
 
 所以，在的成员函数（方法）中，都有个默认的`this指针`，表示的是`对象本事`，代码写成：
 
-```
+```cpp
 this->age = age;
 ```
 
@@ -154,11 +154,11 @@ this->age = age;
 
 **例：**
 
-```
+```cpp
 ~Person();//析构函数，只存在这个唯一版本
 ```
 
-```
+```cpp
 Person::~Person()//析构函数实现
 {
     cout << "Person析构函数" << endl;
@@ -166,7 +166,7 @@ Person::~Person()//析构函数实现
 ```
 在main函数中创建对象，运行即可：
 
-```
+```cpp
 int main()
 {
 	Person p;//会自动调用默认的构造函数 ①
@@ -183,7 +183,7 @@ Person析构函数
 
 当然，如下代码也是同理：
 
-```
+```cpp
 Person* p3 = new Person(18); // 创建对象,调用带参构造函数
 delete p3; // 释放对象
 ```
@@ -195,7 +195,7 @@ delete p3; // 释放对象
 
 **例：** 
 
-```
+```cpp
 Person::Person()
 {
     cout << "Person默认构造函数" << endl;
@@ -208,7 +208,7 @@ Person::Person()
 }
 ```
 
-```
+```cpp
 Person::~Person()//析构函数实现
 {
     cout << "Person析构函数" << endl;

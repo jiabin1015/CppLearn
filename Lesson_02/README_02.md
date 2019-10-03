@@ -6,20 +6,20 @@
 ## 一、定义和使用
 - 语法
 
-```
+```cpp
 datatype &ref_name = origin_name;
 ```
 `datatype`是数据类型，与origin_name变量的类型一致；`ref_name`是引用的变量名（`别名`），`origin_name`是被引用的变量名（`原名称`）；
 
 如：
 
-```
+```cpp
 int a = 10;
 int &a1 = a; // 引用，a1为a的别名
 ```
 以上定义后，a1为a的别名，意味着，对a1的操作等同于对a的操作，反之亦然。如：
 
-```
+```cpp
 cout << "a:" << a << endl;
 cout << "a1:" << a1 << endl;
     
@@ -38,7 +38,7 @@ a1:20
 
 - 注意：引用在定义的时就必须初始化，否则会编译报错。如：
 
-```
+```cpp
 int &a1; // error:Declaration of reference variable 'a1' requires an initializer
 ```
 
@@ -46,7 +46,7 @@ int &a1; // error:Declaration of reference variable 'a1' requires an initializer
 
 先看引用变量的内存地址。
 
-```
+```cpp
 int a = 10;
 int &a1 = a; // 引用，a1为a的别名
 // 输出 a和a1的内存地址
@@ -72,7 +72,7 @@ cout << &a << ", " << &a1 << endl;
 
  **例：** 定义swap函数，实现两个值的交换
 
-```
+```cpp
 void swap(int &a, int &b) {
     // 形参为引用变量，相当于  int &a = a; (=号左边为形参a，=号右边为实参a)
     int tmp = a;
@@ -108,7 +108,7 @@ b:10
 	
 形参为普通变量：
 	
-```
+```cpp
 void funShowStudent1(Student s) {
     cout << "姓名：" << s.name << endl;
     cout << "年龄：" << s.age << endl;
@@ -120,7 +120,7 @@ void funShowStudent1(Student s) {
 
 形参为引用变量：
 
-```
+```cpp
 void funShowStudent2(Student &s) {
     cout << "姓名：" << s.name << endl;
     cout << "年龄：" << s.age << endl;
@@ -133,7 +133,7 @@ void funShowStudent2(Student &s) {
 
 main函数中调用：
 
-```
+```cpp
 int main() {
 
     Student stu;
@@ -172,7 +172,7 @@ show2_stu的内存地址：0x7ffeefbff5b8
 
 如下：`const Student &s`
 
-```
+```cpp
 void funShowStudent(const Student &s) {
     cout << "姓名：" << s.name << endl;
     cout << "年龄：" << s.age << endl;
@@ -193,7 +193,7 @@ void funShowStudent(const Student &s) {
 
 **例：**
 
-```
+```cpp
 int& funExample2() {
     int a = 10;
     a += 10;
@@ -204,7 +204,7 @@ int& funExample2() {
 
 不能返回局部变量的引用，但可以返回，静态变量，全局变量的引用。如：
 
-```
+```cpp
 int& funExample3() {
     static int a = 10; // 静态变量
     a += 10;
@@ -215,7 +215,7 @@ int& funExample3() {
 
 在main函数中调用：
 
-```
+```cpp
 int &res = funExample3();
 cout << res << endl;
 ```
