@@ -3,13 +3,13 @@
 
 ## 一、 定义和使用
 
-```
+```cpp
 类名(const 类名 &形参名);
 ```
 
 如下**定义**：
 
-```
+```cpp
 class Person
 {
 public:
@@ -27,7 +27,7 @@ public:
 
 代码①处，即为Person类的，拷贝构造函数。以下为其实现：
 
-```
+```cpp
 Person::Person(const Person &p)//拷贝构造函数实现
 {
 	// 用p对象的属性，初始化本对象（this)的属性。
@@ -41,7 +41,7 @@ Person::Person(const Person &p)//拷贝构造函数实现
 
 - 通过使用另一个同类型的对象来初始化新创建的对象。
 
-```
+```cpp
 int main()
 {
     Person p(18, 75, 180);
@@ -64,7 +64,7 @@ Person析构函数
 - 复制对象把它作为参数传递给函数。
 - 复制对象，并从函数返回这个对象。
 
-```
+```cpp
 // 对参数p进行修改后，返回
 Person growUp(Person p /*①*/)
 {
@@ -76,7 +76,7 @@ Person growUp(Person p /*①*/)
 }
 ```
 
-```
+```cpp
 int main()
 {
     
@@ -106,7 +106,7 @@ Person析构函数
 
 - 浅拷贝，如下代码示例：
 
-```
+```cpp
 #include <iostream>
 
 using namespace std;
@@ -178,7 +178,7 @@ int main()
 
 原因：p对象调用构造函数申请内存空间（②.2处），而，per对象在创建时，调用的拷贝构造函数（虽然代码没有实现，但也存在）只是简单的进行赋值，如下：
 
-```
+```cpp
 Person::Person(const Person &p)
 {
     name = p.name; // ⑤
@@ -195,7 +195,7 @@ Person::Person(const Person &p)
 
 只需将拷贝构造函数中代码进行如下修改：
 
-```
+```cpp
 Person::Person(const Person &p)
 {
 //    name = p.name; // ⑤

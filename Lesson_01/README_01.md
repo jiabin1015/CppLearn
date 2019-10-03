@@ -5,7 +5,7 @@
 ### 1. 引入头文件：iostream。
 - 标准输入输出流头文件，i == in；o == out
 
-```
+```cpp
 #include <iostream> 
 ```
 ### 2. std::cout  标准输出
@@ -15,14 +15,14 @@
 
 **例** 输出字符串：
 
-```
+```cpp
 std::cout << "hello, world" << std::endl; 
 ```
 终端打印：`hello, world`
 
 **例** 输出变量：
 
-```
+```cpp
 int count  = 10;
 std::cout << count << std::endl;
 ```
@@ -30,7 +30,7 @@ std::cout << count << std::endl;
 
 **例** 输出变量+字符串组合
 
-```
+```cpp
 int a = 10;
 int b = 20;
 std::cout << "a+b=" << a+b << std::endl;
@@ -46,13 +46,13 @@ std::cout << "a+b=" << a+b << std::endl;
 - 同样需要引入头文件 iostream
 - std::cin 从标准输入设备读取用户输入的值，并将值赋值给 双箭头(>>) 后的变量。
 
-```
+```cpp
 std::cin >> 变量名；
 ```
 
 **例** 
 
-```
+```cpp
 int age = 0;
 float height = 0.0f;
 char name[100] = {0};
@@ -96,7 +96,7 @@ binson
 ### 1. 命名空间定义：
 命名空间的定义使用关键字 `namespace`，后跟命名空间的名称
 
-```
+```cpp
 namespace namespace_name {
    // 代码声明
 }
@@ -104,7 +104,7 @@ namespace namespace_name {
 
 **例：** 
 
-```
+```cpp
 // 第一个命名空间
 namespace funSpace1{
    void func(){
@@ -120,13 +120,12 @@ namespace funSpace2{
 
 ```
 ### 2. 使用
-```
+```cpp
 name::code;  // code 可以是变量或函数
 ```
 接上述案例
 
-```
-
+```cpp
 int main() {
   // 调用第一个命名空间中的函数
   funSpace1::func();
@@ -138,13 +137,13 @@ int main() {
 ### 3. using 指令
 - 使用 `using namespace` 指令，告诉编译器，后续的代码将使用指定的命名空间中的名称。
 
-```
+```cpp
 using namespace 空间名;
 ```
 
 **例：** 接上述案例
 
-```
+```cpp
 using namespace funSpace1; // 使用funSpace1命名空间
 int main() {
   // 调用funSpace1命名空间中的func函数
@@ -154,12 +153,12 @@ int main() {
 
 - std 命名空间
 
-```
+```cpp
 using namespace std;
 ```
 使用如上代码后，所有`std::`都可以省略，如：
 
-```
+```cpp
 cout << "whit out std::" << endl;
 // 使用using namespace std;后，cout等价于std::cout，其他语法同理
 std::cout << "whit std::" << std::endl;
@@ -167,7 +166,8 @@ std::cout << "whit std::" << std::endl;
 
 ### 4. 嵌套的命名空间
 可以在一个命名空间中定义另一个命名空间：
-```
+
+```cpp
 namespace space1 {
    // 代码声明
    namespace space2 {
@@ -178,7 +178,7 @@ namespace space1 {
 
 **例:**
 
-```
+```cpp
 // 第一个命名空间
 namespace space1{
    void funSpace(){
