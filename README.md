@@ -37,3 +37,7 @@ C++学习笔记
 ## [Lesson 07：重载](./Lesson_07/README_07.md)
 1. 函数重载
 2. 运算符重载
+
+## [Lesson 08：string](./Lesson_08/README_08.md)
+1. string类基础功能
+2. 自定义string类
