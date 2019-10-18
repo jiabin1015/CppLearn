@@ -41,3 +41,8 @@ C++学习笔记
 ## [Lesson 08：string](./Lesson_08/README_08.md)
 1. string类基础功能
 2. 自定义string类
+
+## [Lesson 09：继承](./Lesson_09/README_09.md)
+1. 单继承
+2. 继承权限
+3. 隐藏
